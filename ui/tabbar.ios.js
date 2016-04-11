@@ -19,6 +19,8 @@
 
 var React = require('react');
 var ReactNative = require('react-native');
+
+var Home = require('./home');
 var {
   StyleSheet,
   TabBarIOS,
@@ -43,7 +45,7 @@ var MyTabbar = React.createClass({
     };
   },
 
-  _renderContent: function(color: string, pageText: string, num?: number) {
+_renderContent: function(color: string, pageText: string, num?: number) {
     return (
       <View style={[styles.tabContent, {backgroundColor: color}]}>
         <Text style={styles.tabText}>{pageText}</Text>
@@ -51,7 +53,6 @@ var MyTabbar = React.createClass({
       </View>
     );
   },
-
   render: function() {
     return (
       <TabBarIOS
@@ -60,21 +61,23 @@ var MyTabbar = React.createClass({
         <TabBarIOS.Item
           title="Blue Tab"
           icon={require('../imgs/flux.png')}
-          selected={this.state.selectedTab === 'blueTab'}
+          selected={this.state.selectedTab === 'firstTab'}
           onPress={() => {
             this.setState({
-              selectedTab: 'blueTab',
+              selectedTab: 'firstTab',
             });
           }}>
-          {this._renderContent('#414A8C', 'Blue Tab')}
+
+          <Home/>
+
         </TabBarIOS.Item>
         <TabBarIOS.Item
           systemIcon="history"
           badge={this.state.notifCount > 0 ? this.state.notifCount : undefined}
-          selected={this.state.selectedTab === 'redTab'}
+          selected={this.state.selectedTab === 'secondTab'}
           onPress={() => {
             this.setState({
-              selectedTab: 'redTab',
+              selectedTab: 'secondTab',
               notifCount: this.state.notifCount + 1,
             });
           }}>
@@ -83,10 +86,10 @@ var MyTabbar = React.createClass({
         <TabBarIOS.Item
           icon={require('../imgs/flux.png')}
           title="More"
-          selected={this.state.selectedTab === 'greenTab'}
+          selected={this.state.selectedTab === 'thirdTab'}
           onPress={() => {
             this.setState({
-              selectedTab: 'greenTab',
+              selectedTab: 'thirdTab',
               presses: this.state.presses + 1
             });
           }}>
