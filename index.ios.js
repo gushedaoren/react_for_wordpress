@@ -13,10 +13,13 @@ import React, {
 
 let Tabbar = require('./ui/tabbar.ios');
 
+
+
+
 class react_for_wordpress extends Component {
   render() {
     return (
-    
+
 
       <Tabbar tyle={styles.tabbar}>
 

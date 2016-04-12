@@ -39,7 +39,7 @@ var MyTabbar = React.createClass({
 
   getInitialState: function() {
     return {
-      selectedTab: 'redTab',
+      selectedTab: 'firstTab',
       notifCount: 0,
       presses: 0,
     };
