@@ -2,6 +2,7 @@
 
 var React = require('react');
 var ReactNative = require('react-native');
+var PostList = require('./PostList.js');
 
 var {
   StyleSheet,
@@ -13,21 +14,14 @@ var {
 } = ReactNative;
 
 
-
 class Home extends Component {
-
-
-  render(){
+  render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-
+        <PostList/>
       </View>
     );
   }
-
 }
 
 var styles = StyleSheet.create({
