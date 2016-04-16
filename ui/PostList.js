@@ -11,6 +11,7 @@ import React, {
   StyleSheet,
   Text,
   View,
+  TouchableHighlight,
 } from 'react-native';
 
 var REQUEST_URL = 'http://nixuchen.com/wp-json/wp/v2/posts';
@@ -30,6 +31,8 @@ class PostList extends Component {
   componentDidMount() {
     this.fetchData();
   }
+
+
 
   fetchData() {
     fetch(REQUEST_URL)
@@ -55,7 +58,7 @@ class PostList extends Component {
     return (
       <ListView
         dataSource={this.state.dataSource}
-        renderRow={this.renderPost}
+        renderRow={this.renderPost.bind(this)}
         style={styles.listView}
       />
     );
@@ -71,17 +74,30 @@ class PostList extends Component {
     );
   }
 
+  _pressRow(){
+    this.props.navigator.push({
+      title:'detail',
+      component:PostDetail
+    })
+  }
+
   renderPost(post) {
 
+
+
     var title=post.title.rendered;
+    var time=post.date;
     return (
+       <TouchableHighlight onPress={() => this._pressRow()}>
       <View style={styles.container}>
 
         <View style={styles.rightContainer}>
           <Text style={styles.title}>{title}</Text>
+          <Text style={styles.year}>{time}</Text>
 
         </View>
       </View>
+      </TouchableHighlight>
     );
   }
 }
@@ -99,11 +115,13 @@ var styles = StyleSheet.create({
   },
   title: {
     fontSize: 16,
-    marginBottom: 8,
+
     textAlign: 'center',
   },
   year: {
-    textAlign: 'center',
+    paddingRight: 8,
+    paddingBottom: 5,
+    textAlign: 'right',
   },
   thumbnail: {
     width: 53,
