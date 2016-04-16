@@ -13,11 +13,8 @@ import React, {
   View,
 } from 'react-native';
 
-var API_KEY = '7waqfqbprs7pajbz28mqf6vz';
-var API_URL = 'http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json';
-var PAGE_SIZE = 25;
-var PARAMS = '?apikey=' + API_KEY + '&page_limit=' + PAGE_SIZE;
-var REQUEST_URL = API_URL + PARAMS;
+var REQUEST_URL = 'http://nixuchen.com/wp-json/wp/v2/posts';
+
 
 class PostList extends Component {
   constructor(props) {
@@ -38,8 +35,12 @@ class PostList extends Component {
     fetch(REQUEST_URL)
       .then((response) => response.json())
       .then((responseData) => {
+        console.log(responseData);
+        var posts = responseData;
         this.setState({
-          dataSource: this.state.dataSource.cloneWithRows(responseData.movies),
+
+
+          dataSource: this.state.dataSource.cloneWithRows(posts),
           loaded: true,
         });
       })
@@ -54,7 +55,7 @@ class PostList extends Component {
     return (
       <ListView
         dataSource={this.state.dataSource}
-        renderRow={this.renderMovie}
+        renderRow={this.renderPost}
         style={styles.listView}
       />
     );
@@ -64,22 +65,21 @@ class PostList extends Component {
     return (
       <View style={styles.container}>
         <Text>
-          Loading movies...
+           加载中...
         </Text>
       </View>
     );
   }
 
-  renderMovie(movie) {
+  renderPost(post) {
+
+    var title=post.title.rendered;
     return (
       <View style={styles.container}>
-        <Image
-          source={{uri: movie.posters.thumbnail}}
-          style={styles.thumbnail}
-        />
+
         <View style={styles.rightContainer}>
-          <Text style={styles.title}>{movie.title}</Text>
-          <Text style={styles.year}>{movie.year}</Text>
+          <Text style={styles.title}>{title}</Text>
+
         </View>
       </View>
     );
@@ -98,7 +98,7 @@ var styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    fontSize: 20,
+    fontSize: 16,
     marginBottom: 8,
     textAlign: 'center',
   },
