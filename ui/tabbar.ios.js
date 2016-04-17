@@ -59,7 +59,7 @@ _renderContent: function(color: string, pageText: string, num?: number) {
         tintColor="white"
         barTintColor="darkslateblue">
         <TabBarIOS.Item
-          title="Blue Tab"
+          title="首页"
           icon={require('../imgs/flux.png')}
           selected={this.state.selectedTab === 'firstTab'}
           onPress={() => {

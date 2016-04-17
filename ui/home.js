@@ -3,6 +3,7 @@
 var React = require('react');
 var ReactNative = require('react-native');
 var PostList = require('./PostList.js');
+var PostDetail = require('./PostDetail.js');
 
 var {
   StyleSheet,
@@ -11,17 +12,23 @@ var {
   Text,
   Image,
   View,
+  Navigator,
 } = ReactNative;
 
 
 class Home extends Component {
+
   render() {
-    return (
-      <View style={styles.container}>
-        <PostList/>
-      </View>
-    );
-  }
+
+
+     return (
+       <PostList/>
+
+  
+     );
+   }
+
+
 }
 
 var styles = StyleSheet.create({
@@ -32,29 +39,9 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  rightContainer: {
-    flex: 1,
-  },
-  title: {
-    fontSize: 20,
-    marginBottom: 8,
-    textAlign: 'center',
-  },
-  year: {
-    textAlign: 'center',
-  },
-  thumbnail: {
-    width: 53,
-    height: 81,
-  },
-  listView: {
-    paddingTop: 20,
-    backgroundColor: '#F5FCFF',
-  },
+
+
 });
+
+
 module.exports = Home;

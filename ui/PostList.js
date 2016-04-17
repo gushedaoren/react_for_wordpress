@@ -12,8 +12,9 @@ import React, {
   Text,
   View,
   TouchableHighlight,
+  NavigatorIOS,
 } from 'react-native';
-
+var PostDetail = require('./PostDetail.js');
 var REQUEST_URL = 'http://nixuchen.com/wp-json/wp/v2/posts';
 
 
@@ -38,7 +39,7 @@ class PostList extends Component {
     fetch(REQUEST_URL)
       .then((response) => response.json())
       .then((responseData) => {
-        console.log(responseData);
+        //console.log(responseData);
         var posts = responseData;
         this.setState({
 
@@ -56,11 +57,16 @@ class PostList extends Component {
     }
 
     return (
+      <View  style={styles.container}>
+
       <ListView
         dataSource={this.state.dataSource}
         renderRow={this.renderPost.bind(this)}
         style={styles.listView}
       />
+
+
+      </View>
     );
   }
 
@@ -75,16 +81,14 @@ class PostList extends Component {
   }
 
   _pressRow(){
+    console.log('pressRow');
     this.props.navigator.push({
-      title:'detail',
-      component:PostDetail
+        title: 'PostDetail',
+        component: PostDetail
     })
   }
 
   renderPost(post) {
-
-
-
     var title=post.title.rendered;
     var time=post.date;
     return (

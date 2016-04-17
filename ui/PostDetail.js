@@ -20,6 +20,7 @@ class PostDetail extends Component {
       <View style={styles.container}>
         <Text>Post Detail</Text>
       </View>
+
     );
   }
 }
