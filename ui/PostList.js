@@ -83,8 +83,7 @@ class PostList extends Component {
   _pressRow(){
     console.log('pressRow');
     this.props.navigator.push({
-        title: 'PostDetail',
-        component: PostDetail
+        name:"PostDetail"
     })
   }
 
@@ -112,7 +111,7 @@ var styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+
   },
   rightContainer: {
     flex: 1,

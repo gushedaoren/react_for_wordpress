@@ -13,18 +13,43 @@ var {
   Image,
   View,
   Navigator,
+  NavigatorIOS,
 } = ReactNative;
 
 
 class Home extends Component {
 
+  renderScene(router, navigator){
+      var Component = null;
+      switch(router.name){
+        case "PostList":
+          Component = PostList;
+          break;
+        case "PostDetail":
+          Component = PostDetail;
+          break;
+        default: //default view
+         Component = PostList;
+
+      }
+
+      return <Component navigator={navigator} />
+    }
+
   render() {
 
 
      return (
-       <PostList/>
 
-  
+
+       <Navigator
+     initialRoute={{name: 'Home', index: 0}}
+     renderScene={this.renderScene}
+
+  />
+
+
+
      );
    }
 
@@ -33,11 +58,11 @@ class Home extends Component {
 
 var styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+
   },
 
 
