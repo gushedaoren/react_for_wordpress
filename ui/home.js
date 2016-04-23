@@ -33,7 +33,7 @@ class Home extends Component {
 
       }
 
-      return <Component navigator={navigator} />
+      return <Component  {...router.params} navigator={navigator} />
     }
 
   render() {
@@ -45,6 +45,9 @@ class Home extends Component {
        <Navigator
      initialRoute={{name: 'Home', index: 0}}
      renderScene={this.renderScene}
+  
+
+
 
   />
 

@@ -80,18 +80,24 @@ class PostList extends Component {
     );
   }
 
-  _pressRow(){
+  _pressRow(id){
     console.log('pressRow');
     this.props.navigator.push({
-        name:"PostDetail"
+        name:"PostDetail",
+        params: {
+                postid: "test",
+
+            }
+
     })
   }
 
   renderPost(post) {
     var title=post.title.rendered;
     var time=post.date;
+    var postid=post.id;
     return (
-       <TouchableHighlight onPress={() => this._pressRow()}>
+       <TouchableHighlight onPress={() => this._pressRow(postid)}>
       <View style={styles.container}>
 
         <View style={styles.rightContainer}>

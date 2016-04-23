@@ -13,12 +13,16 @@ var {
   View,
 } = ReactNative;
 
-
+var REQUEST_URL = 'http://nixuchen.com/wp-json/wp/v2/posts/';
 class PostDetail extends Component {
+
+
+
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Post Detail</Text>
+        <Text>Post Detail {this.props.postid}</Text>
       </View>
 
     );
