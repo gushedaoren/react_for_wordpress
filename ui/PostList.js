@@ -85,7 +85,7 @@ class PostList extends Component {
     this.props.navigator.push({
         name:"PostDetail",
         params: {
-                postid: "test",
+                postid: id,
 
             }
 

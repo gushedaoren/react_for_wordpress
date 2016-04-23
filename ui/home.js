@@ -34,7 +34,7 @@ class Home extends Component {
       }
 
       return <Component  {...router.params} navigator={navigator} />
-    }
+  }
 
   render() {
 

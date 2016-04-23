@@ -11,55 +11,132 @@ var {
   Text,
   Image,
   View,
+  WebView,
 } = ReactNative;
 
 var REQUEST_URL = 'http://nixuchen.com/wp-json/wp/v2/posts/';
+
+var post;
+
+var WEBVIEW_REF = 'webview';
+
+const HTML = `
+<!DOCTYPE html>\n
+<html>
+  <head>
+    <title>Hello Static World</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=320, user-scalable=no">
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+        font: 62.5% arial, sans-serif;
+        background: #ccc;
+      }
+      h1 {
+        padding: 45px;
+        margin: 0;
+        text-align: center;
+        color: #33f;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello Static World</h1>
+  </body>
+</html>
+`;
 class PostDetail extends Component {
 
 
+ constructor(props) {
+    super(props);
+    this.state = {
+      post: post,
+      loaded: false,
+    };
+  }
+
+
+  componentDidMount() {
+    this.fetchData(this.props.postid);
+  }
 
 
   render() {
+
+    if (!this.state.loaded) {
+      return this.renderLoadingView();
+    }
     return (
-      <View style={styles.container}>
-        <Text>Post Detail {this.props.postid}</Text>
-      </View>
+
+      <WebView
+          style={styles.webView}
+          source={{
+             html:this.state.post.content.rendered
+                   }}
+          scalesPageToFit={true}
+        />
+
 
     );
+  }
+
+
+  renderLoadingView() {
+    return (
+      <View style={styles.container}>
+        <Text>
+           加载中...
+        </Text>
+      </View>
+    );
+  }
+
+
+
+  fetchData(postid) {
+    fetch(REQUEST_URL+postid)
+      .then((response) => response.json())
+      .then((responseData) => {
+        console.log(responseData);
+        post = responseData;
+        this.setState({
+
+
+          post: post,
+          loaded: true,
+        });
+
+
+      })
+      .done();
   }
 }
 
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  rightContainer: {
-    flex: 1,
-  },
-  title: {
-    fontSize: 20,
-    marginBottom: 8,
-    textAlign: 'center',
-  },
-  year: {
-    textAlign: 'center',
-  },
-  thumbnail: {
-    width: 53,
-    height: 81,
-  },
-  listView: {
     paddingTop: 20,
+    paddingLeft: 10,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
     backgroundColor: '#F5FCFF',
   },
+
+
+  webView:{
+    marginTop: 20,
+    marginBottom: 60,
+    flex: 1,
+    height:500,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    backgroundColor: '#F5FCFF',
+  }
+
 });
 module.exports = PostDetail;
