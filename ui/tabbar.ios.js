@@ -20,7 +20,7 @@
 var React = require('react');
 var ReactNative = require('react-native');
 
-var Home = require('./home');
+var HomeNav = require('./homenav.ios');
 var {
   StyleSheet,
   TabBarIOS,
@@ -68,7 +68,7 @@ _renderContent: function(color: string, pageText: string, num?: number) {
             });
           }}>
 
-          <Home/>
+          <HomeNav/>
 
         </TabBarIOS.Item>
         <TabBarIOS.Item

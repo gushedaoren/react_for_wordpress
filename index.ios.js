@@ -8,7 +8,8 @@ import React, {
   Component,
   StyleSheet,
   Text,
-  View
+  View,
+  NavigatorIOS,
 } from 'react-native';
 
 let Tabbar = require('./ui/tabbar.ios');

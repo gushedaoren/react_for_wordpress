@@ -45,12 +45,8 @@ class Home extends Component {
        <Navigator
      initialRoute={{name: 'Home', index: 0}}
      renderScene={this.renderScene}
-  
 
-
-
-  />
-
+      />
 
 
      );
@@ -61,7 +57,7 @@ class Home extends Component {
 
 var styles = StyleSheet.create({
   container: {
-    flex: 2,
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
