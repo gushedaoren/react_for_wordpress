@@ -21,6 +21,8 @@ var React = require('react');
 var ReactNative = require('react-native');
 
 var HomeNav = require('./homenav.ios');
+
+var SecondTab = require('./SecondTab.js');
 var {
   StyleSheet,
   TabBarIOS,
@@ -81,7 +83,7 @@ _renderContent: function(color: string, pageText: string, num?: number) {
               notifCount: this.state.notifCount + 1,
             });
           }}>
-          {this._renderContent('#783E33', 'Red Tab', this.state.notifCount)}
+          <SecondTab/>
         </TabBarIOS.Item>
         <TabBarIOS.Item
           icon={require('../imgs/flux.png')}
