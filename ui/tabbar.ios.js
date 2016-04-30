@@ -74,7 +74,9 @@ _renderContent: function(color: string, pageText: string, num?: number) {
 
         </TabBarIOS.Item>
         <TabBarIOS.Item
-          systemIcon="history"
+          title="相册"
+          icon={require('../imgs/flux.png')}
+        
           badge={this.state.notifCount > 0 ? this.state.notifCount : undefined}
           selected={this.state.selectedTab === 'secondTab'}
           onPress={() => {
@@ -87,7 +89,7 @@ _renderContent: function(color: string, pageText: string, num?: number) {
         </TabBarIOS.Item>
         <TabBarIOS.Item
           icon={require('../imgs/flux.png')}
-          title="More"
+          title="更多"
           selected={this.state.selectedTab === 'thirdTab'}
           onPress={() => {
             this.setState({

@@ -15,7 +15,7 @@ import React, {
   NavigatorIOS,
 } from 'react-native';
 var PostDetail = require('./PostDetail.js');
-var REQUEST_URL = 'http://nixuchen.com/wp-json/wp/v2/posts';
+var REQUEST_URL = 'http://nixuchen.com/wp-json/wp/v2/posts?per_page=20';
 
 
 class PostList extends Component {
@@ -98,7 +98,7 @@ class PostList extends Component {
     var postid=post.id;
     return (
        <TouchableHighlight onPress={() => this._pressRow(postid)}>
-      <View style={styles.container}>
+      <View style={styles.list_content}>
 
         <View style={styles.rightContainer}>
           <Text style={styles.title}>{title}</Text>
@@ -115,8 +115,19 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
+
+    marginTop:64,
+    marginBottom:49,
+
+  },
+
+  list_content: {
+    flex: 1,
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
+
+
 
   },
   rightContainer: {

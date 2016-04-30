@@ -24,7 +24,7 @@ var HomeNav = React.createClass({
       <NavigatorIOS style={styles.container}
         initialRoute={{
           component: Home,
-          title: 'My View Title',
+          title: '文章列表',
           passProps: { myProp: 'foo' },
         }}
       />

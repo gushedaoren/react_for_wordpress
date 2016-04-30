@@ -3,7 +3,7 @@
 var React = require('react');
 var ReactNative = require('react-native');
 var GridView = require('react-native-grid-view');
-var REQUEST_URL = 'http://nixuchen.com/wp-json/wp/v2/media';
+var REQUEST_URL = 'http://nixuchen.com/wp-json/wp/v2/media?per_page=30';
 var {
   StyleSheet,
   ListView,
