@@ -36,7 +36,7 @@ class SecondTab extends Component {
     fetch(REQUEST_URL)
       .then((response) => response.json())
       .then((responseData) => {
-        //console.log(responseData);
+        console.log(responseData);
         var posts = responseData;
         this.setState({
 
@@ -63,7 +63,8 @@ renderLoadingView() {
 
 
 renderItem(item) {
-   return <Image style={{width: 120, height: 90}} key={item.id} source={require('../imgs/ad3.png')} />
+   console.log(item.source_url);
+   return <Image style={{width: 120, height: 90}} key={item.id} source={{uri: item.source_url}} />
  }
 
 
