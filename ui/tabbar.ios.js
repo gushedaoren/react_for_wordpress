@@ -22,7 +22,7 @@ var ReactNative = require('react-native');
 
 var HomeNav = require('./homenav.ios');
 
-var SecondTab = require('./SecondTab.js');
+var SecondNav = require('./SecondNav.js');
 var {
   StyleSheet,
   TabBarIOS,
@@ -76,7 +76,7 @@ _renderContent: function(color: string, pageText: string, num?: number) {
         <TabBarIOS.Item
           title="相册"
           icon={require('../imgs/flux.png')}
-        
+
           badge={this.state.notifCount > 0 ? this.state.notifCount : undefined}
           selected={this.state.selectedTab === 'secondTab'}
           onPress={() => {
@@ -85,7 +85,7 @@ _renderContent: function(color: string, pageText: string, num?: number) {
               notifCount: this.state.notifCount + 1,
             });
           }}>
-          <SecondTab/>
+          <SecondNav/>
         </TabBarIOS.Item>
         <TabBarIOS.Item
           icon={require('../imgs/flux.png')}

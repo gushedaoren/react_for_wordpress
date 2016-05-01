@@ -78,12 +78,15 @@ renderItem(item) {
 
      return (
 
+  <View style={styles.container}>
        <GridView
         items={this.state.datas}
         itemsPerRow={3}
         renderItem={this.renderItem}
         style={styles.listView}
       />
+
+      </View>
 
 
      );
@@ -98,8 +101,9 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
+    marginTop:64,
+    marginBottom:49,
+
 
   },
   listView: {
