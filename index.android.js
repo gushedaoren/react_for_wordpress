@@ -8,23 +8,56 @@ import React, {
   Component,
   StyleSheet,
   Text,
-  View
+  View,
+  Image,
 } from 'react-native';
+import TabNavigator from 'react-native-tab-navigator';
+var Home = require('./ui/home.js');
 
+var SecondNav = require('./ui/SecondNav.js');
 class react_for_wordpress extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+
+        selectedTab: 'firstTab',
+    };
+  }
+
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+      <TabNavigator>
+  <TabNavigator.Item
+    selected={this.state.selectedTab === 'firstTab'}
+    title="首页"
+    renderIcon={() => <Image source={require('./imgs/flux.png')} />}
+    renderSelectedIcon={() => <Image source={require('./imgs/flux.png')} />}
+
+    onPress={() => this.setState({ selectedTab: 'firstTab' })}>
+    <Home/>
+  </TabNavigator.Item>
+  <TabNavigator.Item
+    selected={this.state.selectedTab === 'secondTab'}
+    title="相册"
+    renderIcon={() => <Image source={require('./imgs/flux.png')} />}
+    renderSelectedIcon={() => <Image source={require('./imgs/flux.png')} />}
+
+    onPress={() => this.setState({ selectedTab: 'secondTab' })}>
+    <SecondNav/>
+  </TabNavigator.Item>
+
+  <TabNavigator.Item
+    selected={this.state.selectedTab === 'thirdTab'}
+    title="更多"
+    renderIcon={() => <Image source={require('./imgs/flux.png')} />}
+    renderSelectedIcon={() => <Image source={require('./imgs/flux.png')} />}
+
+    onPress={() => this.setState({ selectedTab: 'thirdTab' })}>
+    <SecondNav/>
+  </TabNavigator.Item>
+</TabNavigator>
     );
   }
 }
