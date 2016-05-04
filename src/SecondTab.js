@@ -101,8 +101,8 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-    marginTop:64,
-    marginBottom:49,
+    marginTop:45,
+    
 
 
   },

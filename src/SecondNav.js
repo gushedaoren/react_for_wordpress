@@ -3,7 +3,7 @@
 var React = require('react');
 var ReactNative = require('react-native');
 var SecondTab = require('./SecondTab.js');
-
+import {Actions, Scene, Router} from 'react-native-router-flux';
 
 var {
   StyleSheet,
@@ -15,30 +15,29 @@ var {
   Navigator,
   NavigatorIOS,
 } = ReactNative;
+const scenes = Actions.create(
+            <Scene key="root" >
+                <Scene key="SecondTab" component={SecondTab} title="相册"/>
 
 
-var SecondNav = React.createClass({
 
-  render: function() {
-    return (
-      <NavigatorIOS style={styles.container}
-        initialRoute={{
-          component: SecondTab,
-          title: '图片',
-          passProps: { myProp: 'foo' },
-        }}
-      />
-    );
-  },
-});
+            </Scene>
+);
+class SecondNav extends Component {
+
+
+  render() {
+          return <Router scenes={scenes}/>
+      }
+
+}
+
+
+
 var styles = StyleSheet.create({
   container: {
     flex:1,
-
-
   },
-
-
 
 });
 

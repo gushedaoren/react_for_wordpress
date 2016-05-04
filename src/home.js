@@ -24,7 +24,8 @@ var titleConfig = {
 const scenes = Actions.create(
             <Scene key="root" >
                 <Scene key="PostList" component={PostList} title="文章列表"/>
-                <Scene key="PostDetail" component={PostDetail} title="文章内容"/>
+                   <Scene key="PostDetail" component={PostDetail} title="文章内容"/>
+            
 
             </Scene>
 );

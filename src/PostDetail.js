@@ -128,8 +128,8 @@ var styles = StyleSheet.create({
 
 
   webView:{
-    marginTop: 20,
-    marginBottom: 60,
+    marginTop: 45,
+
     flex: 1,
     height:500,
     flexDirection: 'row',

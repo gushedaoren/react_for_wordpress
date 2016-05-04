@@ -14,7 +14,7 @@ import React, {
 import TabNavigator from 'react-native-tab-navigator';
 var Home = require('./src/home.js');
 
-var SecondTab = require('./src/SecondTab.js');
+var SecondNav = require('./src/SecondNav.js');
 class react_for_wordpress extends Component {
 
   constructor(props) {
@@ -45,7 +45,7 @@ class react_for_wordpress extends Component {
     renderSelectedIcon={() => <Image source={require('./imgs/flux.png')} />}
 
     onPress={() => this.setState({ selectedTab: 'secondTab' })}>
-    <SecondTab/>
+    <SecondNav/>
   </TabNavigator.Item>
 
   <TabNavigator.Item
