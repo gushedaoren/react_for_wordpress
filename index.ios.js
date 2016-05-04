@@ -20,12 +20,7 @@ let Tabbar = require('./src/tabbar.ios');
 class react_for_wordpress extends Component {
   render() {
     return (
-
-
-      <Tabbar tyle={styles.tabbar}>
-
-
-       </Tabbar>
+        <Tabbar/>
     );
   }
 }

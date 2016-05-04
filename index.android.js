@@ -19,13 +19,6 @@ var Tabbar = require('./src/Tabbar.js');
 
 class react_for_wordpress extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-
-        selectedTab: 'firstTab',
-    };
-  }
 
 
   render() {
