@@ -3,6 +3,7 @@
 var React = require('react');
 var ReactNative = require('react-native');
 var GridView = require('react-native-grid-view');
+var BaseComponent = require('./BaseComponent.js');
 var REQUEST_URL = 'http://nixuchen.com/wp-json/wp/v2/media?per_page=30';
 var {
   StyleSheet,
@@ -15,16 +16,10 @@ var {
 } = ReactNative;
 
 
-class SecondTab extends Component {
+class SecondTab extends BaseComponent {
 
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      datas: "test",
-      loaded: false,
-    };
-  }
+
 
   componentDidMount() {
     this.fetchData();
@@ -49,15 +44,7 @@ class SecondTab extends Component {
 
 
 
-renderLoadingView() {
-    return (
-      <View style={styles.container}>
-        <Text>
-           加载中...
-        </Text>
-      </View>
-    );
-  }
+
 
 
 

@@ -2,7 +2,7 @@
 
 var React = require('react');
 var ReactNative = require('react-native');
-
+var BaseComponent = require('./BaseComponent.js');
 
 var {
   StyleSheet,
@@ -47,14 +47,14 @@ const HTML = `
   </body>
 </html>
 `;
-class PostDetail extends Component {
+class PostDetail extends BaseComponent {
 
 
  constructor(props) {
     super(props);
     this.state = {
       post: post,
-      loaded: false,
+    
     };
   }
 
@@ -84,15 +84,7 @@ class PostDetail extends Component {
   }
 
 
-  renderLoadingView() {
-    return (
-      <View style={styles.container}>
-        <Text>
-           加载中...
-        </Text>
-      </View>
-    );
-  }
+
 
 
 

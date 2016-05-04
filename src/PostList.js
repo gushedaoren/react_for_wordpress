@@ -15,17 +15,18 @@ import React, {
 
 } from 'react-native';
 var PostDetail = require('./PostDetail.js');
+var BaseComponent = require('./BaseComponent.js');
 var REQUEST_URL = 'http://nixuchen.com/wp-json/wp/v2/posts?per_page=20';
 
 import {Actions} from 'react-native-router-flux';
-class PostList extends Component {
+class PostList extends BaseComponent {
   constructor(props) {
     super(props);
     this.state = {
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2,
       }),
-      loaded: false,
+    
     };
   }
 
@@ -70,15 +71,7 @@ class PostList extends Component {
     );
   }
 
-  renderLoadingView() {
-    return (
-      <View style={styles.container}>
-        <Text>
-           加载中...
-        </Text>
-      </View>
-    );
-  }
+
 
   _pressRow(id){
     console.log('pressRow');
