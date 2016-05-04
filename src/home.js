@@ -16,55 +16,24 @@ var {
   Navigator,
   NavigatorIOS,
 } = ReactNative;
-
+import {Actions, Scene, Router} from 'react-native-router-flux';
 var titleConfig = {
   title: '首页',
 };
+
+const scenes = Actions.create(
+            <Scene key="root" >
+                <Scene key="PostList" component={PostList} title="文章列表"/>
+                <Scene key="PostDetail" component={PostDetail} title="文章内容"/>
+
+            </Scene>
+);
 class Home extends Component {
 
 
-  renderScene(router, navigator){
-      var Component = null;
-      switch(router.name){
-        case "PostList":
-          Component = PostList;
-          break;
-        case "PostDetail":
-          Component = PostDetail;
-          break;
-        default: //default view
-         Component = PostList;
-
-      }
-
-      return <Component  {...router.params} navigator={navigator} />
-  }
-
   render() {
-
-
-     return (
-
-    //
-    //    <Navigator
-    //  initialRoute={{name: 'Home', index: 0}}
-    //  renderScene={this.renderScene}
-    //
-    //   />
-
- <View style={{ flex: 1, }}>
-    <NavigationBar
-        title={titleConfig}
-      />
-
-      <PostList/>
-
-  </View>
-
-
-     );
-   }
-
+          return <Router scenes={scenes}/>
+      }
 
 }
 

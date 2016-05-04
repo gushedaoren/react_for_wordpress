@@ -17,7 +17,7 @@ import React, {
 var PostDetail = require('./PostDetail.js');
 var REQUEST_URL = 'http://nixuchen.com/wp-json/wp/v2/posts?per_page=20';
 
-
+import {Actions} from 'react-native-router-flux';
 class PostList extends Component {
   constructor(props) {
     super(props);
@@ -82,14 +82,7 @@ class PostList extends Component {
 
   _pressRow(id){
     console.log('pressRow');
-    this.props.navigator.push({
-        name:"PostDetail",
-        params: {
-                postid: id,
-
-            }
-
-    })
+    Actions.PostDetail({postid:id});
   }
 
   renderPost(post) {
@@ -115,6 +108,7 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
+    marginTop:45,
 
 
 
@@ -147,7 +141,7 @@ var styles = StyleSheet.create({
     height: 81,
   },
   listView: {
-  
+
 
     backgroundColor: '#F5FCFF',
   },

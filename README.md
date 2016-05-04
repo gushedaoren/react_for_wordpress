@@ -2,14 +2,19 @@
 react for wordpress
 
 
-初始化：
+tabBar：
 https://github.com/gushedaoren/react-native-tab-navigator
 npm install react-native-tab-navigator --save
 
 
+
+网格视图
 https://github.com/gushedaoren/react-native-grid-view
 npm install react-native-grid-view
 
 
-https://github.com/gushedaoren/react-native-navbar
-npm i react-native-navbar --save
+
+
+导航栏及导航
+https://github.com/gushedaoren/react-native-router-flux
+npm i react-native-router-flux --save
