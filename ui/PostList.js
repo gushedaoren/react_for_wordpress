@@ -116,8 +116,7 @@ var styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
 
-    marginTop:64,
-    marginBottom:49,
+
 
   },
 
@@ -148,7 +147,8 @@ var styles = StyleSheet.create({
     height: 81,
   },
   listView: {
-    paddingTop: 20,
+  
+
     backgroundColor: '#F5FCFF',
   },
 });

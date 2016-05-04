@@ -6,5 +6,10 @@ react for wordpress
 https://github.com/gushedaoren/react-native-tab-navigator
 npm install react-native-tab-navigator --save
 
+
 https://github.com/gushedaoren/react-native-grid-view
 npm install react-native-grid-view
+
+
+https://github.com/gushedaoren/react-native-navbar
+npm i react-native-navbar --save

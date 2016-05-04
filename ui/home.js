@@ -4,6 +4,7 @@ var React = require('react');
 var ReactNative = require('react-native');
 var PostList = require('./PostList.js');
 var PostDetail = require('./PostDetail.js');
+var NavigationBar = require('react-native-navbar');
 
 var {
   StyleSheet,
@@ -16,8 +17,11 @@ var {
   NavigatorIOS,
 } = ReactNative;
 
-
+var titleConfig = {
+  title: '首页',
+};
 class Home extends Component {
+
 
   renderScene(router, navigator){
       var Component = null;
@@ -41,12 +45,21 @@ class Home extends Component {
 
      return (
 
+    //
+    //    <Navigator
+    //  initialRoute={{name: 'Home', index: 0}}
+    //  renderScene={this.renderScene}
+    //
+    //   />
 
-       <Navigator
-     initialRoute={{name: 'Home', index: 0}}
-     renderScene={this.renderScene}
-
+ <View style={{ flex: 1, }}>
+    <NavigationBar
+        title={titleConfig}
       />
+
+      <PostList/>
+
+  </View>
 
 
      );
