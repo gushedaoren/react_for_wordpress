@@ -8,6 +8,7 @@ import React, {
 import TabNavigator from 'react-native-tab-navigator';
 var Home = require('./home.js');
 var SecondNav = require('./SecondNav.js');
+var ThirdNav = require('./ThirdNav.js');
 class Tabbar extends Component {
 
   constructor(props) {
@@ -48,7 +49,7 @@ class Tabbar extends Component {
     renderSelectedIcon={() => <Image source={require('../imgs/flux.png')} />}
 
     onPress={() => this.setState({ selectedTab: 'thirdTab' })}>
-    <Home/>
+    <ThirdNav/>
   </TabNavigator.Item>
 </TabNavigator>
     );
