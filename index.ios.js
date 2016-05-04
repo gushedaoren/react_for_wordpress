@@ -12,7 +12,7 @@ import React, {
   NavigatorIOS,
 } from 'react-native';
 
-let Tabbar = require('./ui/tabbar.ios');
+let Tabbar = require('./src/tabbar.ios');
 
 
 

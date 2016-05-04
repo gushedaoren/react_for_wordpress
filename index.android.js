@@ -12,9 +12,9 @@ import React, {
   Image,
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
-var Home = require('./ui/home.js');
+var Home = require('./src/home.js');
 
-var SecondTab = require('./ui/SecondTab.js');
+var SecondTab = require('./src/SecondTab.js');
 class react_for_wordpress extends Component {
 
   constructor(props) {
