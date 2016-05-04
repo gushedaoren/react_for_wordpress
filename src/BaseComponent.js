@@ -10,8 +10,11 @@ var {
   Text,
   Image,
   View,
+  BackAndroid,
 
 } = ReactNative;
+
+import {Actions, Scene, Router} from 'react-native-router-flux';
 class BaseComponent extends Component {
 
   constructor(props) {
@@ -21,6 +24,13 @@ class BaseComponent extends Component {
        loaded: false,
      };
    }
+  navigatorPop(){
+   Actions.pop();
+   return true;
+  }
+ componentDidMount(){
+   BackAndroid.addEventListener('hardwareBackPress', this.navigatorPop)
+}
 
   renderLoadingView() {
     return (

@@ -73,7 +73,7 @@ renderItem(item) {
         style={styles.listView}
       />
 
-      </View>
+  </View>
 
 
      );

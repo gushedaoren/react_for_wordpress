@@ -19,7 +19,7 @@ import {Actions, Scene, Router} from 'react-native-router-flux';
 var titleConfig = {
   title: '首页',
 };
-
+var BaseComponent = require('./BaseComponent.js');
 const scenes = Actions.create(
             <Scene key="root" >
                 <Scene key="PostList" component={PostList} title="文章列表"/>
@@ -28,8 +28,7 @@ const scenes = Actions.create(
 
             </Scene>
 );
-class Home extends Component {
-
+class Home extends BaseComponent {
 
   render() {
           return <Router scenes={scenes}/>

@@ -18,8 +18,6 @@ const scenes = Actions.create(
             <Scene key="root" >
                 <Scene key="ThirdTab" component={ThirdTab} title="更多"/>
 
-
-
             </Scene>
 );
 class ThirdNav extends Component {
