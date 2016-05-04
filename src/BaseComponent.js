@@ -3,8 +3,6 @@
 var React = require('react');
 var ReactNative = require('react-native');
 
-
-
 var {
   StyleSheet,
   ListView,
@@ -19,7 +17,7 @@ class BaseComponent extends Component {
   constructor(props) {
      super(props);
      this.state = {
-      
+
        loaded: false,
      };
    }

@@ -16,7 +16,9 @@ import React, {
 } from 'react-native';
 var PostDetail = require('./PostDetail.js');
 var BaseComponent = require('./BaseComponent.js');
-var REQUEST_URL = 'http://nixuchen.com/wp-json/wp/v2/posts?per_page=20';
+
+var API=require('./Api.js');
+
 
 import {Actions} from 'react-native-router-flux';
 class PostList extends BaseComponent {
@@ -26,7 +28,7 @@ class PostList extends BaseComponent {
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2,
       }),
-    
+
     };
   }
 
@@ -37,7 +39,7 @@ class PostList extends BaseComponent {
 
 
   fetchData() {
-    fetch(REQUEST_URL)
+    fetch(API.getPostList())
       .then((response) => response.json())
       .then((responseData) => {
         //console.log(responseData);

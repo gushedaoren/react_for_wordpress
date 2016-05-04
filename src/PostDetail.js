@@ -14,7 +14,9 @@ var {
   WebView,
 } = ReactNative;
 
-var REQUEST_URL = 'http://nixuchen.com/wp-json/wp/v2/posts/';
+var API=require('./Api.js');
+
+
 
 var post;
 
@@ -54,7 +56,7 @@ class PostDetail extends BaseComponent {
     super(props);
     this.state = {
       post: post,
-    
+
     };
   }
 
@@ -89,7 +91,7 @@ class PostDetail extends BaseComponent {
 
 
   fetchData(postid) {
-    fetch(REQUEST_URL+postid)
+    fetch(API.getPostDetail(postid))
       .then((response) => response.json())
       .then((responseData) => {
         console.log(responseData);

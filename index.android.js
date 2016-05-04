@@ -28,8 +28,8 @@ class react_for_wordpress extends Component {
 
   render() {
     return (
-      <TabNavigator>
-  <TabNavigator.Item
+      <TabNavigator tabBarStyle={{ bottom:0 }} >
+  <TabNavigator.Item  
     selected={this.state.selectedTab === 'firstTab'}
     title="首页"
     renderIcon={() => <Image source={require('./imgs/flux.png')} />}
@@ -69,10 +69,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  navigator_style: {
+    bottom:0,
+
   },
   instructions: {
     textAlign: 'center',
