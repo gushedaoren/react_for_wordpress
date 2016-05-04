@@ -4,7 +4,8 @@ var React = require('react');
 var ReactNative = require('react-native');
 var GridView = require('react-native-grid-view');
 var BaseComponent = require('./BaseComponent.js');
-var REQUEST_URL = 'http://nixuchen.com/wp-json/wp/v2/media?per_page=30';
+
+var API=require('./Api.js');
 var {
   StyleSheet,
   ListView,
@@ -27,7 +28,7 @@ class SecondTab extends BaseComponent {
 
 
   fetchData() {
-    fetch(REQUEST_URL)
+    fetch(API.getMedias())
       .then((response) => response.json())
       .then((responseData) => {
         console.log(responseData);

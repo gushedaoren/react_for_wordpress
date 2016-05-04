@@ -8,4 +8,8 @@ module.exports = {
     return API_ADDRESS + '/wp-json/wp/v2/posts/' + id;
   },
 
+  getMedias : function() {
+    return API_ADDRESS + '/wp-json/wp/v2/media?per_page=30';
+  },
+
 }

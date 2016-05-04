@@ -11,10 +11,12 @@ import React, {
   View,
   Image,
 } from 'react-native';
-import TabNavigator from 'react-native-tab-navigator';
-var Home = require('./src/home.js');
 
-var SecondNav = require('./src/SecondNav.js');
+
+
+var Tabbar = require('./src/Tabbar.js');
+
+
 class react_for_wordpress extends Component {
 
   constructor(props) {
@@ -28,36 +30,7 @@ class react_for_wordpress extends Component {
 
   render() {
     return (
-      <TabNavigator tabBarStyle={{ bottom:0 }} >
-  <TabNavigator.Item  
-    selected={this.state.selectedTab === 'firstTab'}
-    title="首页"
-    renderIcon={() => <Image source={require('./imgs/flux.png')} />}
-    renderSelectedIcon={() => <Image source={require('./imgs/flux.png')} />}
-
-    onPress={() => this.setState({ selectedTab: 'firstTab' })}>
-    <Home/>
-  </TabNavigator.Item>
-  <TabNavigator.Item
-    selected={this.state.selectedTab === 'secondTab'}
-    title="相册"
-    renderIcon={() => <Image source={require('./imgs/flux.png')} />}
-    renderSelectedIcon={() => <Image source={require('./imgs/flux.png')} />}
-
-    onPress={() => this.setState({ selectedTab: 'secondTab' })}>
-    <SecondNav/>
-  </TabNavigator.Item>
-
-  <TabNavigator.Item
-    selected={this.state.selectedTab === 'thirdTab'}
-    title="更多"
-    renderIcon={() => <Image source={require('./imgs/flux.png')} />}
-    renderSelectedIcon={() => <Image source={require('./imgs/flux.png')} />}
-
-    onPress={() => this.setState({ selectedTab: 'thirdTab' })}>
-    <Home/>
-  </TabNavigator.Item>
-</TabNavigator>
+        <Tabbar/>
     );
   }
 }
