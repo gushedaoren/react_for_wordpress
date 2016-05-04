@@ -12,8 +12,7 @@ var {
   Text,
   Image,
   View,
-  Navigator,
-  NavigatorIOS,
+
 } = ReactNative;
 const scenes = Actions.create(
             <Scene key="root" >

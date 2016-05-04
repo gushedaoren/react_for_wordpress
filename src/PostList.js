@@ -12,7 +12,7 @@ import React, {
   Text,
   View,
   TouchableHighlight,
-  NavigatorIOS,
+
 } from 'react-native';
 var PostDetail = require('./PostDetail.js');
 var REQUEST_URL = 'http://nixuchen.com/wp-json/wp/v2/posts?per_page=20';

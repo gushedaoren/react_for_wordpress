@@ -11,8 +11,7 @@ var {
   Text,
   Image,
   View,
-  Navigator,
-  NavigatorIOS,
+
 } = ReactNative;
 
 
@@ -102,7 +101,7 @@ var styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     marginTop:45,
-    
+
 
 
   },

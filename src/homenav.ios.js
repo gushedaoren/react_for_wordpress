@@ -12,8 +12,7 @@ var {
   Text,
   Image,
   View,
-  Navigator,
-  NavigatorIOS,
+
 } = ReactNative;
 
 
