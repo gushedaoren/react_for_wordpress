@@ -26,8 +26,8 @@ class Tabbar extends Component {
   <TabNavigator.Item
     selected={this.state.selectedTab === 'firstTab'}
     title="首页"
-    renderIcon={() => <Image source={require('../imgs/flux.png')} />}
-    renderSelectedIcon={() => <Image source={require('../imgs/flux.png')} />}
+    renderIcon={() => <Image style={styles.tab_icon} source={require('../imgs/tab_bar_1_normal.png')} />}
+    renderSelectedIcon={() => <Image style={styles.tab_icon} source={require('../imgs/tab_bar_1_pressed.png')} />}
 
     onPress={() => this.setState({ selectedTab: 'firstTab' })}>
     <Home/>
@@ -35,8 +35,8 @@ class Tabbar extends Component {
   <TabNavigator.Item
     selected={this.state.selectedTab === 'secondTab'}
     title="相册"
-    renderIcon={() => <Image source={require('../imgs/flux.png')} />}
-    renderSelectedIcon={() => <Image source={require('../imgs/flux.png')} />}
+    renderIcon={() => <Image style={styles.tab_icon} source={require('../imgs/tab_bar_2_normal.png')} />}
+    renderSelectedIcon={() => <Image style={styles.tab_icon} source={require('../imgs/tab_bar_2_pressed.png')} />}
 
     onPress={() => this.setState({ selectedTab: 'secondTab' })}>
     <SecondNav/>
@@ -45,8 +45,8 @@ class Tabbar extends Component {
   <TabNavigator.Item
     selected={this.state.selectedTab === 'thirdTab'}
     title="更多"
-    renderIcon={() => <Image source={require('../imgs/flux.png')} />}
-    renderSelectedIcon={() => <Image source={require('../imgs/flux.png')} />}
+    renderIcon={() => <Image style={styles.tab_icon} source={require('../imgs/tab_bar_3_normal.png')} />}
+    renderSelectedIcon={() => <Image style={styles.tab_icon} source={require('../imgs/tab_bar_3_pressed.png')} />}
 
     onPress={() => this.setState({ selectedTab: 'thirdTab' })}>
     <ThirdNav/>
@@ -55,5 +55,14 @@ class Tabbar extends Component {
     );
   }
 }
+
+var styles = StyleSheet.create({
+  tab_icon: {
+    width: 30,
+    height: 30,
+  },
+
+});
+
 
 module.exports = Tabbar;
