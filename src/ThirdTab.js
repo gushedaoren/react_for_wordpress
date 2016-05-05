@@ -17,6 +17,8 @@ var {
 } = ReactNative;
 
 
+var ItemLine = require('./ItemLine.js');
+
 class ThirdTab extends BaseComponent {
 
 
@@ -28,11 +30,21 @@ class ThirdTab extends BaseComponent {
 
 
      return (
-
-  <View style={styles.container}>
-      <Text>test</Text>
-
+<View style={styles.container}>
+  <View style={styles.container1}>
+        <ItemLine title="朋友圈" imgSource={require('../imgs/more_circlefriends.png')}/>
+        <ItemLine title="扫一扫" imgSource={require('../imgs/more_chat.png')}/>
+        <ItemLine title="摇一摇" imgSource={require('../imgs/more_icon_qq.png')}/>
       </View>
+
+      <View style={styles.container2}>
+            <ItemLine title="附近的人" imgSource={require('../imgs/more_icon_zhifubao.png')}/>
+            <ItemLine title="关于" imgSource={require('../imgs/more_weimicircle.png')}/>
+
+          </View>
+
+
+          </View>
 
 
      );
@@ -44,11 +56,29 @@ class ThirdTab extends BaseComponent {
 }
 
 var styles = StyleSheet.create({
+
   container: {
-    flex: 1,
-    flexDirection: 'row',
+
+
     marginTop:45,
 
+
+
+  },
+  container1: {
+
+
+
+
+
+
+  },
+  container2: {
+
+
+    marginTop:45,
+    borderTopWidth: 1,
+    borderColor: '#ccc',
 
 
   },
