@@ -60,7 +60,7 @@ var styles = StyleSheet.create({
   container: {
 
 
-    marginTop:45,
+    marginTop:64,
 
 
 
