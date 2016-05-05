@@ -18,3 +18,5 @@ npm install react-native-grid-view
 导航栏及导航
 https://github.com/gushedaoren/react-native-router-flux
 npm i react-native-router-flux --save
+
+

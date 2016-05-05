@@ -17,6 +17,8 @@ var {
 } = ReactNative;
 
 
+var ItemLine = require('./ItemLine.js');
+
 class ThirdTab extends BaseComponent {
 
 
@@ -28,11 +30,21 @@ class ThirdTab extends BaseComponent {
 
 
      return (
-
-  <View style={styles.container}>
-      <Text>test</Text>
-
+<View style={styles.container}>
+  <View style={styles.container1}>
+        <ItemLine/>
+        <ItemLine/>
+        <ItemLine/>
       </View>
+
+      <View style={styles.container2}>
+            <ItemLine/>
+            <ItemLine/>
+
+          </View>
+
+
+          </View>
 
 
      );
@@ -44,9 +56,26 @@ class ThirdTab extends BaseComponent {
 }
 
 var styles = StyleSheet.create({
+
   container: {
-    flex: 1,
-    flexDirection: 'row',
+    
+
+    marginTop:45,
+
+
+
+  },
+  container1: {
+
+
+
+
+
+
+  },
+  container2: {
+
+
     marginTop:45,
 
 
