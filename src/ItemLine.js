@@ -17,14 +17,18 @@ var {
 
 class ItemLine extends Component {
 
+
+
   render()  {
+    var title = this.props.title;
+    var imgSource = this.props.imgSource;
 
     return (
       <View style={styles.Item}>
 
-          <Image style={styles.icon} source={require('../imgs/icon.png')}></Image>
+          <Image  style={styles.icon} source={imgSource}></Image>
 
-          <Text style={styles.item_text}>关于</Text>
+          <Text style={styles.item_text}>{title}</Text>
 
 
 
@@ -40,7 +44,7 @@ var styles = StyleSheet.create({
   Item: {
 
 
-    
+
     flexDirection: 'row',
     height:40,
 

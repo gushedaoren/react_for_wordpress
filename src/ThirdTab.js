@@ -32,14 +32,14 @@ class ThirdTab extends BaseComponent {
      return (
 <View style={styles.container}>
   <View style={styles.container1}>
-        <ItemLine/>
-        <ItemLine/>
-        <ItemLine/>
+        <ItemLine title="朋友圈" imgSource={require('../imgs/icon.png')}/>
+        <ItemLine title="扫一扫" imgSource={require('../imgs/icon.png')}/>
+        <ItemLine title="摇一摇" imgSource={require('../imgs/icon.png')}/>
       </View>
 
       <View style={styles.container2}>
-            <ItemLine/>
-            <ItemLine/>
+            <ItemLine title="附近的人" imgSource={require('../imgs/icon.png')}/>
+            <ItemLine title="关于" imgSource={require('../imgs/icon.png')}/>
 
           </View>
 
@@ -58,7 +58,7 @@ class ThirdTab extends BaseComponent {
 var styles = StyleSheet.create({
 
   container: {
-    
+
 
     marginTop:45,
 
@@ -77,7 +77,8 @@ var styles = StyleSheet.create({
 
 
     marginTop:45,
-
+    borderTopWidth: 1,
+    borderColor: '#ccc',
 
 
   },
